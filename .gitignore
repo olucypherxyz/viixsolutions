@@ -9,3 +9,7 @@ Desktop.ini
 .env
 .env.*
 *.pem
+
+# Reference sources — not part of the shipped site
+VIIXSolutions.old/
+/*.md
