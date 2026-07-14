@@ -1,0 +1,11 @@
+﻿# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+*.log
+
+# Local / secrets
+.env
+.env.*
+*.pem
