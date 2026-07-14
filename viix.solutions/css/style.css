@@ -205,20 +205,58 @@ h6,
 }
 
 @media (max-width: 991.98px) {
-    .sticky-top.navbar-dark {
-        position: relative;
+    /* Solid bar + menu panel so white links stay readable over page content */
+    .navbar.navbar-dark {
         background: #000000;
+    }
+
+    .sticky-top.navbar-dark {
+        position: sticky;
+        background: #000000;
+    }
+
+    .navbar-dark .navbar-collapse {
+        background: #000000;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .navbar-dark .navbar-nav .nav-link,
     .navbar-dark .navbar-nav .nav-link.show,
     .sticky-top.navbar-dark .navbar-nav .nav-link {
         padding: 10px 0;
-        color: #FFFFFF;
+        color: #FFFFFF !important;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link.active {
+        color: var(--primary) !important;
+    }
+
+    .navbar-dark .region-switcher-nav a,
+    .navbar-dark .region-switcher-nav span,
+    .sticky-top.navbar-dark .region-switcher-nav a,
+    .sticky-top.navbar-dark .region-switcher-nav span {
+        color: rgba(255, 255, 255, 0.85) !important;
     }
 
     .navbar-dark .navbar-brand h1 {
-        color: var(--primary);
+        color: #FFFFFF;
+    }
+
+    .navbar-dark .navbar-toggler {
+        color: #FFFFFF !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+    }
+
+    /* Dark bar is always on for mobile — use wordmark */
+    .navbar.navbar-dark .brand-logo-shape {
+        display: none;
+    }
+
+    .navbar.navbar-dark .brand-logo-text {
+        display: block;
     }
 }
 
