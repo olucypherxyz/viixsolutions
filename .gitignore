@@ -13,3 +13,7 @@ Desktop.ini
 # Reference sources — not part of the shipped site
 VIIXSolutions.old/
 /*.md
+
+# Vercel local project linkage
+.vercel/
+viix.solutions/.vercel/
