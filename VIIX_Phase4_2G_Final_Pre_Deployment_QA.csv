@@ -1,0 +1,77 @@
+Priority,Category,Page,Check,Result,Detail
+P3,Claims,/,2 countries retained,PASS,Present on homepage
+P3,Claims,/,10+ verified reference clients retained,PASS,Present on homepage
+P3,Image 4.2F,/,Homepage Kanban → hands.jpg,PASS,Present
+P3,Image 4.2F,/,AI/robot → carousel-2.jpg,PASS,Present
+P3,Image 4.2F,/,AI/robot removed,PASS,Absent as required
+P3,Image 4.2F,/price,AI Actions → code pillars,PASS,Present
+P3,Image 4.2F,/price,AI Actions removed,PASS,Absent as required
+P3,Image 4.2F,/service,Desktop Support → repair.jpg,PASS,Present
+P3,Image 4.2F,/service,Consulting → feature.jpg,PASS,Present
+P3,Image 4.2F,/service,Procurement → cookiecutter racks,PASS,Present
+P3,Image 4.2F,/service,GPU removed,PASS,Absent as required
+P3,Image 4.2F,/en-ng/about,NG about-vision → brand desk,PASS,Present
+P3,Image 4.2F,/en-ng/about,about-vision removed,PASS,Absent as required
+P3,Image 4.2F,/en-za,ZA AI/robot → carousel-2,PASS,Present
+P3,Image 4.2F,/en-za,ZA Kraftway → cookiecutter,PASS,Present
+P3,Image 4.2F,/en-za,Kraftway removed,PASS,Absent as required
+P3,Image 4.2F,/en-ng,walls.io retained,PASS,Present
+P3,Image 4.2F,/service,Desktop vs Consulting dedicated,PASS,DS=img/legacy/repair.jpg CONS=img/feature.jpg
+P3,Taxonomy,/service,Technology &amp; IT Services,PASS,
+P3,Taxonomy,/service,Digital Marketing &amp; Media,PASS,
+P3,Taxonomy,/service,Business Operations,PASS,
+P3,Taxonomy,/service,Customer Relations &amp; Sales Support,PASS,
+P3,Taxonomy,/service,BGI absent,PASS,
+P3,Regional SEO,/en-za,ZA Managed IT ownership,PASS,
+P3,Regional SEO,/en-za,ZA cybersecurity/POPIA language,PASS,
+P3,Regional SEO,/en-ng,NG website/brand ownership,PASS,
+P3,Technical SEO,sitemap.xml,Exactly 27 URLs,PASS,count=27
+P3,Technical SEO,robots.txt,Sitemap declaration,PASS,"User-agent: *
+Allow: /
+
+Sitemap: https://www.viix.solutions/sitemap.xml"
+P3,Technical SEO,vercel.json,cleanUrls,PASS,true
+P3,Technical SEO,vercel.json,trailingSlash false,PASS,false
+P3,Technical SEO,vercel.json,Vercel duplicate-host noindex,PASS,Configured
+P3,Technical SEO,/404,Custom 404 exists,PASS,
+P3,Technical SEO,/404,404 noindex,PASS,
+P2,Deferred,legacy/repair.jpg,ShoreTel/Cisco logos,DEFER,Documented 4.2F — not a factual/legal blocker for deploy
+P2,Deferred,/feature + /en-za,Cottonbro Kanban remains,DEFER,Outside homepage-only 4.2F scope
+P2,Deferred,/en-ng mosaics,walls.io retained,DEFER,Approved retain per 4.2E
+P3,Asset integrity,site-wide,No unintended external image deps introduced,PASS,Expected CDNs only (jquery/jsdelivr/fonts/cdnjs). External asset refs scanned=135
+P3,Page integrity,/,Local HTTP,PASS,status=200
+P3,Page integrity,/about,Local HTTP,PASS,status=200
+P3,Page integrity,/service,Local HTTP,PASS,status=200
+P3,Page integrity,/feature,Local HTTP,PASS,status=200
+P3,Page integrity,/price,Local HTTP,PASS,status=200
+P3,Page integrity,/quote,Local HTTP,PASS,status=200
+P3,Page integrity,/contact,Local HTTP,PASS,status=200
+P3,Page integrity,/team,Local HTTP,PASS,status=200
+P3,Page integrity,/testimonial,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/about,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/service,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/feature,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/price,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/quote,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/contact,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/team,Local HTTP,PASS,status=200
+P3,Page integrity,/en-za/testimonial,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/about,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/service,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/feature,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/price,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/quote,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/contact,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/team,Local HTTP,PASS,status=200
+P3,Page integrity,/en-ng/testimonial,Local HTTP,PASS,status=200
+P3,Technical SEO,/blog,Returns 404 locally,PASS,status=404
+P3,Technical SEO,/detail,Returns 404 locally,PASS,status=404
+P3,Live baseline,www,Homepage 200,PASS,"{""status"":200,""location"":"""",""robots"":""""}"
+P3,Live baseline,apex,Redirects to www,PASS,"{""status"":308,""location"":""https://www.viix.solutions/"",""robots"":""""}"
+P3,Live baseline,.html,Redirects clean URL,PASS,"{""status"":308,""location"":""/about"",""robots"":""""}"
+P3,Live baseline,trailing slash,Redirects clean URL,PASS,"{""status"":308,""location"":""/about"",""robots"":""""}"
+P3,Live baseline,/blog,404,PASS,"{""status"":404,""location"":"""",""robots"":""""}"
+P3,Live baseline,/detail,404,PASS,"{""status"":404,""location"":"""",""robots"":""""}"
+P3,Live baseline,vercel.app,X-Robots-Tag noindex,PASS,"{""status"":200,""location"":"""",""robots"":""noindex, nofollow""}"

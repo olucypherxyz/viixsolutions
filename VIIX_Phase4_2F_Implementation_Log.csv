@@ -1,0 +1,21 @@
+Page,Original Asset,Original Issue,Action,Replacement Asset,Source,Source URL if external,Alt-text change,Status,Notes
+/team (Sola bio),(copy claim),Sola 15+ unsupported tenure,REMOVE,(n/a — copy),Phase 4.2E decision,n/a,n/a,DONE,Also en-za/team and en-ng/team
+/en-za/team (Sola bio),(copy claim),Sola 15+ unsupported tenure,REMOVE,(n/a — copy),Phase 4.2E decision,n/a,n/a,DONE,
+/en-ng/team (Sola bio),(copy claim),Sola 15+ unsupported tenure,REMOVE,(n/a — copy),Phase 4.2E decision,n/a,n/a,DONE,
+/,img/pexels-cottonbro-6804093.jpg,Homepage Kanban weak for managed-services narrative,REPLACE,img/legacy/hands.jpg,Existing VIIX library,n/a,Kanban board → Team members stacking hands over charts and a laptop,DONE,Coordinated delivery / teamwork
+/,img/pexels-tara-winstead-8386440.jpg,AI/robot mosaic tile,REPLACE,img/carousel-2.jpg,Existing VIIX library,n/a,N/A (CSS bg),DONE,Brand-neutral architecture
+/testimonial,img/pexels-tara-winstead-8386440.jpg,AI/robot mosaic tile,REPLACE,img/carousel-2.jpg,Existing VIIX library,n/a,N/A (CSS bg),DONE,
+/en-za,../img/pexels-tara-winstead-8386440.jpg,AI/robot mosaic tile,REPLACE,../img/carousel-2.jpg,Existing VIIX library,n/a,N/A (CSS bg),DONE,
+/price,img/pexels-dkomov-34804018.jpg,AI Actions IDE association,REPLACE,img/pexels-googledeepmind-18069694.jpg,Existing VIIX library,n/a,N/A (CSS bg),DONE,Code-pillar abstract tech without AI Actions UI
+/en-za,../img/pexels-sejio402-6466141.jpg,Kraftway/aged rack branding,REPLACE,../img/pexels-cookiecutter-17323801.jpg,Existing VIIX library,n/a,N/A (CSS bg),DONE,NETWORK-2 racks without Kraftway/IBM labels
+/en-za/about,../img/pexels-sejio402-6466141.jpg,Kraftway/aged rack branding,REPLACE,../img/pexels-cookiecutter-17323801.jpg,Existing VIIX library,n/a,N/A (CSS bg),DONE,
+/service Desktop Support,img/legacy/remote-services.jpg (shared),Shared with Consulting; Alienware already removed in 4.2D,REPLACE dedicated,img/legacy/repair.jpg,Existing VIIX library,n/a,→ Technician servicing networking equipment in a server rack,DONE,Distinct from Consulting
+/service Consulting,img/legacy/remote-services.jpg (shared),Shared with Desktop Support,REPLACE dedicated,img/feature.jpg,Existing VIIX library,n/a,→ Professional presenting charts on a whiteboard in a meeting,DONE,Advisory/consulting visual
+/service Procurement,img/legacy/system-unit.jpg,Gaming GPU / EVGA product imagery,REPLACE,img/pexels-cookiecutter-17323801.jpg,Existing VIIX library,n/a,→ Server racks in a blue-lit data centre corridor,DONE,Hardware infrastructure not GPU
+/en-za/service Desktop Support,../img/legacy/desktop-support.jpg,Alienware gaming workstation,REPLACE,../img/legacy/repair.jpg,Existing VIIX library,n/a,→ Technician servicing networking equipment in a server rack,DONE,
+/en-za/service Procurement,../img/legacy/system-unit.jpg,Gaming GPU imagery,REPLACE,../img/pexels-cookiecutter-17323801.jpg,Existing VIIX library,n/a,→ Server racks in a blue-lit data centre corridor,DONE,
+/en-ng/service Desktop Support,../img/legacy/desktop-support.jpg,Alienware gaming workstation,REPLACE,../img/legacy/repair.jpg,Existing VIIX library,n/a,→ Technician servicing networking equipment in a server rack,DONE,
+/en-ng/service Consulting,../img/legacy/remote-services.jpg,Needed dedicated consulting visual,REPLACE,../img/feature.jpg,Existing VIIX library,n/a,→ Professional presenting charts on a whiteboard in a meeting,DONE,
+/en-ng/about Who we serve,../img/legacy/about-vision.jpg,Photo-print creative weak for NG who we serve,REPLACE,../img/pexels-leeloothefirst-7818219.jpg,Existing VIIX library,n/a,→ Brand strategy planning documents on a desk beside a laptop,DONE,Supports NG brand/visibility positioning
+/en-ng + /en-ng/about mosaics,../img/pexels-walls-io-440716388-15595049.jpg,Previously deferred; 4.2E RETAIN,RETAIN,same,Phase 4.2E decision,n/a,unchanged,DONE,Explicit retain — not modified
+/,Track Record copy,Approved Set A claims,RETAIN,2 countries / 10+ verified reference clients,Phase 4.2E decision,n/a,unchanged,DONE,Not rewritten

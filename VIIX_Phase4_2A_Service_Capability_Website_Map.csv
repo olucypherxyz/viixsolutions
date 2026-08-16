@@ -1,0 +1,29 @@
+Service Domain,Service,Source Document,Currently On Website,Current Page,Public Website Appropriate,Recommended Website Layer,Regional Relevance,SEO Relevance,Commercial Relevance,Proof Required,Owner Approval Required,Recommendation,Notes
+Business Operations,Bookkeeping / AP-AR / financial reporting,Services Directory §1,NO,—,Limited,Global positioning only (light) OR proposal/SOW,Both secondary,Low for acquisition,High capability,YES,YES,DO NOT ADD prominently,Risk: looks like generic BPO
+Business Operations,Procurement / logistics / inventory,Services Directory §1,NO,—,Limited,Proposal/SOW,Both,None,Medium,YES,YES,HOLD — outside current acquisition,—
+Business Operations,HR / payroll / recruitment admin,Services Directory §1,NO,—,Limited,Proposal/SOW,Both,None,Medium,YES,YES,HOLD,—
+Business Operations,Office management / admin,Services Directory §1,NO,—,Limited,Proposal/SOW,Both,None,Low,YES,YES,HOLD,—
+Business Operations,Compliance / contract admin / audit prep / POPIA-NDPR execution,Services Directory §1,PARTIAL (POPIA IT-aware only),/en-za/*,Selective,ZA supporting (IT-control framing) + SOW for full ops compliance,ZA primary,Supporting only,High,YES,YES,KEEP claim-safe IT POPIA; do not advertise full compliance ops,NDPR not on site
+Business Operations,Process optimisation / SOP documentation,Services Directory §1,PARTIAL (workflow/AI mentions),/service global lightly,Selective,Global differentiator line OR SOW,Both,Low,Medium,YES,YES,FUTURE light global mention only,—
+Technology and IT Services,Remote/onsite helpdesk support,Services Directory §2,YES,/en-za/service,Yes,ZA primary service page,ZA,Primary,High,NO,NO,KEEP,Aligned Phase 3.1
+Technology and IT Services,After-hours / emergency support,Services Directory §2,NO,—,Conditional,Feature/price caveat only,ZA,Low,Medium,YES,YES,DO NOT ADD as 24/7 promise,Directory says subject to availability
+Technology and IT Services,Endpoint / MDM / hardware lifecycle,Services Directory §2,PARTIAL,/en-za/service,Yes,ZA service supporting bullets,ZA,Supporting,High,NO,NO,EXPAND lightly future,—
+Technology and IT Services,Microsoft 365 administration,Services Directory §2,YES,/en-za/service,Yes,ZA primary,ZA,P2 cluster,High,NO,NO,KEEP,—
+Technology and IT Services,Google Workspace administration,Services Directory §2,YES,/en-za/service,Yes,ZA primary,ZA,P2 cluster,High,NO,NO,KEEP,—
+Technology and IT Services,Cybersecurity monitoring / vulnerability assessment,Services Directory §2,PARTIAL (security-conscious),/en-za/service /feature,Yes with claim limits,ZA supporting claim-safe,ZA,Primary/supporting,High,YES,YES,KEEP conservative; no SOC/MDR,—
+Technology and IT Services,Network / server / backup-DR,Services Directory §2,YES,/en-za/service,Yes,ZA primary,ZA,Primary,High,NO,NO,KEEP,—
+Technology and IT Services,Technology projects (migrations/ERP/POS etc.),Services Directory §2,PARTIAL (generic),regional service lightly,Yes as quoted projects,Feature/price: quoted via SOW,Both,Low,High,YES,YES,STATE as separately quoted,Do not list ERP/POS on SEO pages
+Technology and IT Services,Reporting and technology advisory,Services Directory §2,PARTIAL (SLA reviews),/en-za/feature,Yes,Feature/price tiers,ZA,Low,High,NO,NO,EXPAND on feature/price,Matches Profile tiers
+Digital Marketing and Media,Website design / development,Services Directory §3,YES,/en-ng/service,Yes,NG primary,NG,Primary,High,NO,NO,KEEP,—
+Digital Marketing and Media,Brand identity / graphic design / brand collateral,Services Directory §3,YES,/en-ng/service,Yes,NG primary,NG,Primary,High,NO,NO,KEEP,—
+Digital Marketing and Media,SEO,Services Directory §3,YES supporting,/en-ng/service,Yes supporting,NG supporting only,NG,Supporting; REJECT as ZA primary,Medium,NO,NO,KEEP supporting; do not elevate ZA,Phase 3.1
+Digital Marketing and Media,Social media management,Services Directory §3,YES,/en-ng/service,Yes,NG supporting,NG,Supporting,High,NO,NO,KEEP,—
+Digital Marketing and Media,Paid advertising / email / SMS-WhatsApp campaigns,Services Directory §3,PARTIAL (campaigns),/en-ng/service,Selective,NG supporting OR SOW,NG,Supporting,High,YES,YES,EXPAND carefully — avoid DMA positioning,Monitor digital marketing agency Lagos
+Digital Marketing and Media,Video / photography / content production,Services Directory §3,YES,/en-ng/service,Yes,NG supporting,NG,Supporting,High,NO,NO,KEEP,—
+Digital Marketing and Media,Marketing analytics / GBP local SEO,Services Directory §3,NO (GBP),—,Selective,SOW / future,Both,Low public,Medium,YES,YES,HOLD GBP (no public HQ),—
+Customer Relations and Sales Support,CRM implementation/management,Services Directory §4,NO,—,Limited,Global capability line OR SOW,Both,None current,High capability,YES,YES,HOLD for acquisition; FUTURE global mention,Risk: generic outsourcing look
+Customer Relations and Sales Support,Customer service operations / loyalty,Services Directory §4,NO,—,Limited,Proposal/SOW,Both,None,Medium,YES,YES,HOLD,—
+Customer Relations and Sales Support,Lead gen / pipeline / sales ops,Services Directory §4,NO,—,Limited,Proposal/SOW or future,Both,None,High,YES,YES,HOLD — not current SEO acquisition,—
+Managed Services Model,Essential / Business / Enterprise tiers,Business Profile,NO named tiers,price/feature implied only,Yes conceptual,Feature + regional price (no public rates),Both,None,High,YES,YES,ADD conceptual naming future,Do not publish price tables
+Managed Services Model,Monthly allocation / response times / CR-SOW,Business Profile,PARTIAL (SLA mentions),feature/price/quote,Yes,Feature + quote expectation-setting,Both,None,High,YES,YES,EXPAND on feature/quote,Core differentiator vs freelancers
+Positioning Label,Business Growth Infrastructure as search category,Legacy Master Profile / site /service,YES as pillar name,/service,No as SEO category,Internal/differentiation language only if renamed,Global,REJECT as search category,Low,NO,YES,REVISE naming to Profile domains,Phase 3.1 / Phase 4 reject
