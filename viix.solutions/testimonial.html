@@ -68,7 +68,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -91,7 +91,7 @@
     </div>
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <div class="container-fluid bg-dark px-5 d-none d-xl-block">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
@@ -113,7 +113,7 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <nav class="navbar navbar-expand-xl navbar-dark px-5 py-3 py-xl-0">
             <a href="./" class="navbar-brand p-0 d-flex align-items-center gap-2">
                 <img src="img/logo/viixlogoshape.png" alt="" class="brand-logo brand-logo-shape">
                 <img src="img/logo/viixlogotext.png" alt="VIIX Solutions" class="brand-logo brand-logo-text">
@@ -132,7 +132,12 @@
                     <a href="team" class="nav-item nav-link">Team</a>
                     <a href="contact" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="quote" class="btn btn-primary py-2 px-4 ms-lg-3">Book an Assessment</a>
+                <div class="d-xl-none py-2 region-switcher-nav">
+                    <a class="me-2 text-white" href="en-ng" data-viix-region="en-ng">🇳🇬 Nigeria &amp; West Africa</a>
+                    <span class="text-white-50 me-2">·</span>
+                    <a class="text-white" href="en-za" data-viix-region="en-za">🇿🇦 Southern Africa</a>
+                </div>
+                <a href="quote" class="btn btn-primary py-2 px-4 ms-xl-3">Book an Assessment</a>
             </div>
         </nav>
 
@@ -154,40 +159,39 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Group Track Record</h5>
-                <h2 class="mb-0">Built across borders</h2>
+                <h2 class="mb-0">Built Across Borders</h2>
             </div>
             <div class="row gx-0 mb-5">
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4 facts-card">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
                             <i class="fa fa-clock text-primary"></i>
                         </div>
-                        <div class="ps-4">
-                            <p class="display-6 text-white mb-0"><span data-toggle="counter-up">50</span>+</p>
-                            <h5 class="text-white mb-0">Years of combined experience</h5>
+                        <div class="ps-4 facts-copy">
+                            <p class="facts-number text-white"><span data-toggle="counter-up">50</span>+</p>
+                            <h5 class="facts-label text-white">Years of Combined Experience</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4 facts-card">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
                             <i class="fa fa-globe text-white"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="text-primary mb-0">Countries</h5>
-                            <p class="display-6 mb-0" data-toggle="counter-up">2</p>
+                        <div class="ps-4 facts-copy">
+                            <p class="facts-number"><span data-toggle="counter-up">2</span></p>
+                            <h5 class="facts-label text-primary">Countries</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4 facts-card">
                         <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
                             <i class="fa fa-users text-primary"></i>
                         </div>
-                        <div class="ps-4">
-                            <h5 class="text-white mb-0">Reference clients</h5>
-                            <p class="display-6 text-white mb-0" data-toggle="counter-up">10</p>
-                            <small class="text-white">+</small>
+                        <div class="ps-4 facts-copy">
+                            <p class="facts-number text-white"><span data-toggle="counter-up">10</span>+</p>
+                            <h5 class="facts-label text-white">Verified Reference Clients</h5>
                         </div>
                     </div>
                 </div>
@@ -279,7 +283,7 @@
                     <p class="mb-2"><i class="bi bi-telephone text-primary me-2"></i>Nigeria: +234 707 794 5545</p>
                 </div>
                 <div class="col-lg-4">
-                    <h4 class="text-light mb-4">Regional sites</h4>
+                    <h4 class="text-light mb-4">Regional Sites</h4>
                     <div class="link-animated d-flex flex-column justify-content-start">
                         <a class="text-light mb-2" href="en-ng" data-viix-region="en-ng"><i class="bi bi-arrow-right text-primary me-2"></i>Nigeria &amp; West Africa</a>
                         <a class="text-light mb-2" href="en-za" data-viix-region="en-za"><i class="bi bi-arrow-right text-primary me-2"></i>Southern Africa</a>
@@ -287,7 +291,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <h4 class="text-light mb-4">Quick links</h4>
+                    <h4 class="text-light mb-4">Quick Links</h4>
                     <div class="link-animated d-flex flex-column justify-content-start">
                         <a class="text-light mb-2" href="./"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
                         <a class="text-light mb-2" href="about"><i class="bi bi-arrow-right text-primary me-2"></i>About</a>

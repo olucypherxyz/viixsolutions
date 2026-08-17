@@ -37,7 +37,7 @@
     var showClass = "show";
 
     $(window).on("load resize", function () {
-        if (this.matchMedia("(min-width: 992px)").matches) {
+        if (this.matchMedia("(min-width: 1200px)").matches) {
             $dropdown.hover(
                 function () {
                     var $this = $(this);
@@ -153,6 +153,7 @@
     })();
 
     // Service showcase filters (legacy portfolio pattern)
+    $(".portfolio-filters li").attr("tabindex", "0");
     $(".portfolio-filters").on("click", "li", function () {
         var $btn = $(this);
         var filter = $btn.data("filter") || "*";
@@ -172,6 +173,11 @@
                     $item.addClass("is-hidden");
                 }
             });
+        }
+    }).on("keydown", "li", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            $(this).trigger("click");
         }
     });
 
