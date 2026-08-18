@@ -1,0 +1,33 @@
+Page,Placement,Old image,New image,Action,Alt text,Responsive result,QA result
+/,Problem teaser,img/legacy/hands.jpg,img/pexels-kindel-media-7688460.jpg,REPLACE,Team reviewing marketing strategy charts and a laptop at a conference table,PASS — media-frame cover; overhead strategy meeting composition,PASS
+/about,About teaser,img/legacy/hands.jpg,img/pexels-kindel-media-7688460.jpg,REPLACE,Team reviewing marketing strategy charts and a laptop at a conference table,PASS — media-frame cover,PASS
+/about,Who We Are column,img/legacy/about-mission.jpg,img/pexels-rdne-7490839.jpg,REPLACE,Two professionals seated with a laptop at a small round table,PASS — 220px about-col; focal-top (center 18%); both faces in crop at 375–1280,PASS
+/about,How We Help column,img/legacy/about-plan.jpg,img/pexels-mikael-blomkvist-6476589.jpg,REPLACE,Hands holding a tablet showing a monthly bar chart on a wooden desk,PASS — 220px about-col; focal-center; no head to clip,PASS
+/about,Where We Work column,img/legacy/remote-services.jpg,img/pexels-yan-krukau-7792817.jpg,REPLACE,Professional working at a laptop in a modern office,PASS — 220px about-col; focal-center; face and laptop retained,PASS
+/service,Consulting card,img/feature.jpg,img/pexels-rdne-9034265.jpg,REPLACE,Woman presenting a handwritten chart on a whiteboard,PASS — 220px portfolio card; focal-head (center 22%); head not clipped,PASS
+/service,Management card,img/legacy/hands.jpg,img/pexels-kindel-media-7688460.jpg,REPLACE,Team reviewing marketing strategy charts and a laptop at a conference table,PASS — 220px card; focal-center; strategy charts and laptop retained,PASS
+/service,Procurement card,img/pexels-tima-miroshnichenko-6169032.jpg,img/pexels-tima-miroshnichenko-6169643.jpg,REPLACE,Person checking a clipboard beside warehouse shelves of labelled cartons,PASS — 220px card; focal-center (replaced focal-top),PASS
+/service,CRM Implementation card,img/pexels-olia-danilevich-8145347.jpg,img/pexels-christina-morillo-1181519.jpg,REPLACE,Woman in glasses standing in front of a glass whiteboard with handwritten notes,PASS — 220px card; focal-center; previous head-clip not repeated,PASS
+/service,Customer Service card,img/pexels-kampus-production-8439694.jpg,img/pexels-gustavo-fring-7446590.jpg,REPLACE,Woman reviewing a tablet in a glass-walled office,PASS — 220px card; focal-head; face and tablet retained,PASS
+/service,Sales Operations card,img/pexels-silverkblack-36733313.jpg,img/pexels-mikhail-nilov-9301763.jpg,REPLACE,Professional standing with a document while colleagues listen at a meeting table,PASS — 220px card; focal-head; presenter face retained,PASS
+/feature,Engagement photo pair,img/legacy/about-plan.jpg,img/pexels-mikael-blomkvist-6476589.jpg,REPLACE,Hands holding a tablet showing a monthly bar chart on a wooden desk,PASS — media-frame cover,PASS
+/contact,Supporting photo,img/legacy/about-plan.jpg,img/pexels-mikael-blomkvist-6476589.jpg,REPLACE,Hands holding a tablet showing a monthly bar chart on a wooden desk,PASS — media-frame cover,PASS
+/en-za/about,Who We Are column,../img/legacy/about-mission.jpg,../img/pexels-rdne-7490839.jpg,REPLACE,Two professionals seated with a laptop at a small round table,PASS — same 220px about-col crop as global,PASS
+/en-za/about,How We Help column,../img/legacy/about-plan.jpg,../img/pexels-mikael-blomkvist-6476589.jpg,REPLACE,Hands holding a tablet showing a monthly bar chart on a wooden desk,PASS,PASS
+/en-za/about,Where We Work column,../img/legacy/remote-services.jpg,../img/pexels-yan-krukau-7792817.jpg,REPLACE,Professional working at a laptop in a modern office,PASS,PASS
+/en-za/service,Procurement card,../img/pexels-tima-miroshnichenko-6169032.jpg,../img/pexels-tima-miroshnichenko-6169643.jpg,REPLACE,Person checking a clipboard beside warehouse shelves of labelled cartons,PASS,PASS
+/en-za/service,CRM Implementation card,../img/pexels-olia-danilevich-8145347.jpg,../img/pexels-christina-morillo-1181519.jpg,REPLACE,Woman in glasses standing in front of a glass whiteboard with handwritten notes,PASS,PASS
+/en-za/service,Customer Service card,../img/pexels-kampus-production-8439694.jpg,../img/pexels-gustavo-fring-7446590.jpg,REPLACE,Woman reviewing a tablet in a glass-walled office,PASS,PASS
+/en-ng/about,NG about teaser,../img/legacy/about-vision.jpg,../img/pexels-picjumbo-com-196644.jpg,REPLACE (non-human fallback),Open notebook with website wireframe sketches and a pen on a wooden desk,PASS — media-frame,PASS
+/en-ng/about,Who We Are column,../img/legacy/about-mission.jpg,../img/pexels-rdne-7490839.jpg,REPLACE,Two professionals seated with a laptop at a small round table,PASS,PASS
+/en-ng/about,How We Help column,../img/legacy/about-plan.jpg,../img/pexels-mikael-blomkvist-6476589.jpg,REPLACE,Hands holding a tablet showing a monthly bar chart on a wooden desk,PASS,PASS
+/en-ng/about,Who we serve column,../img/pexels-leeloothefirst-7818219.jpg,UNCHANGED,KEEP,Brand strategy planning documents on a desk beside a laptop,n/a — not in 4.3D REPLACE set,PASS — not modified
+/en-ng/about,NG mosaic walls.io tile,../img/pexels-walls-io-440716388-15595049.jpg,UNCHANGED,NOT TOUCHED (OWNER REVIEW),n/a,n/a,PASS — unchanged
+/en-ng/service,Consulting card,../img/feature.jpg,../img/pexels-rdne-9034265.jpg,REPLACE,Woman presenting a handwritten chart on a whiteboard,PASS,PASS
+/en-ng/service,CRM Implementation card,../img/pexels-olia-danilevich-8145347.jpg,../img/pexels-christina-morillo-1181519.jpg,REPLACE,Woman in glasses standing in front of a glass whiteboard with handwritten notes,PASS,PASS
+/en-ng/service,Sales Operations card,../img/pexels-silverkblack-36733313.jpg,../img/pexels-mikhail-nilov-9301763.jpg,REPLACE,Professional standing with a document while colleagues listen at a meeting table,PASS,PASS
+/en-ng,NG mosaic walls.io tile,../img/pexels-walls-io-440716388-15595049.jpg,UNCHANGED,NOT TOUCHED (OWNER REVIEW),n/a,n/a,PASS — unchanged
+/team; /en-za/team; /en-ng/team,Team portraits,img/team/ola.png; olu.png; sola.png,UNCHANGED,KEEP,existing approved alts,n/a,PASS — not modified
+/service; /en-za/service; /en-ng/service,Desktop Support,img/legacy/repair.jpg,UNCHANGED,KEEP,Technician servicing networking equipment in a server rack,n/a,PASS — not modified
+/service; /en-za/service,Server Management,img/legacy/server.jpg,UNCHANGED,KEEP,Professional with a tablet beside a glassed server room,n/a,PASS — not modified
+all 27 pages,HTTP / broken-image / SEO / claims,n/a,n/a,QA,n/a,n/a,PASS — 27/27 HTTP 200; 0 broken image paths; titles/meta/canonicals/hreflang/JSON-LD/H1 unchanged; no BGI/tenure/SOC regressions
