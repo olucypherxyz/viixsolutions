@@ -187,6 +187,8 @@ const CASE_STUDIES = [
     outcome: null,
     robots: null,
     noSeoCopy: true,
+    heroImage: "img/portfolio/cdr-technical.jpg",
+    heroImageAlt: "CDR Technical website homepage featuring construction industry services",
   },
   {
     id: "P5-007",
@@ -213,6 +215,8 @@ const CASE_STUDIES = [
     outcome: null,
     robots: null,
     noSeoCopy: true,
+    heroImage: "img/portfolio/sisonke-africa.jpg",
+    heroImageAlt: "Sisonke Africa Energy website homepage",
   },
   {
     id: "P5-009",
@@ -241,6 +245,8 @@ const CASE_STUDIES = [
     limitation:
       "VESSA is in development. VIIX does not claim commercial adoption, paying customers, revenue, or market deployment for this product.",
     robots: null,
+    heroImage: "img/portfolio/vessa.png",
+    heroImageAlt: "VESSA product module overview showing foundation and phased business system layers",
   },
   {
     id: "P5-010",
@@ -269,6 +275,8 @@ const CASE_STUDIES = [
     limitation:
       "POSflyt is independent R&D. It is not client work and does not imply commercial deployment or customer adoption.",
     robots: "noindex, follow",
+    heroImage: "img/portfolio/posflyt.png",
+    heroImageAlt: "POSflyt point-of-sale and inventory management platform homepage",
   },
 ];
 
@@ -423,6 +431,23 @@ function placeholderFigure(label) {
                     </figure>`;
 }
 
+function projectFigure(project, depth, variant = "card") {
+  const p = prefixForDepth(depth);
+  if (project.heroImage) {
+    const alt = project.heroImageAlt || `${project.name} project visual`;
+    const cls = variant === "hero" ? "portfolio-figure portfolio-figure--hero" : "portfolio-figure";
+    return `<figure class="${cls}">
+                        <img src="${p}${esc(project.heroImage)}" alt="${esc(alt)}" loading="lazy">
+                    </figure>`;
+  }
+  return placeholderFigure(project.name);
+}
+
+function visualPendingNote(project) {
+  if (project.heroImage) return "";
+  return `<p class="small text-muted mb-0">Project visuals are pending owner-supplied assets. This placeholder maintains layout without using unapproved screenshots.</p>`;
+}
+
 function portfolioCard(project, depth) {
   const p = prefixForDepth(depth);
   const href = `${p}portfolio/${project.slug}`;
@@ -431,7 +456,7 @@ function portfolioCard(project, depth) {
     : `<p class="text-muted small mb-2">${esc(project.descriptor)}</p>`;
   return `                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.1s">
                     <a href="${href}" class="portfolio-card d-block text-decoration-none h-100">
-                        ${placeholderFigure(project.name)}
+                        ${projectFigure(project, depth)}
                         <div class="portfolio-info">
                             <h4>${esc(project.name)}</h4>
                             <p>${esc(project.categoryLabel)}</p>
@@ -764,9 +789,9 @@ ${limitationBlock}
                 </div>
                 <div class="col-lg-5">
                     <div class="portfolio-card mb-4">
-                        ${placeholderFigure(project.name)}
+                        ${projectFigure(project, depth, "hero")}
                     </div>
-                    <p class="small text-muted mb-0">Project visuals are pending owner-supplied assets. This placeholder maintains layout without using unapproved screenshots.</p>
+                    ${visualPendingNote(project)}
                 </div>
             </div>
         </div>
