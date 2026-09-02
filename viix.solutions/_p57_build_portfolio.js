@@ -1,5 +1,5 @@
 ﻿/**
- * Phase 5.7 — generate portfolio.html and portfolio/{slug}.html
+ * Phase 5.7 — generate portfolio/index.html and portfolio/{slug}.html
  */
 const fs = require("fs");
 const path = require("path");
@@ -450,7 +450,7 @@ function visualPendingNote(project) {
 
 function portfolioCard(project, depth) {
   const p = prefixForDepth(depth);
-  const href = `${p}portfolio/${project.slug}`;
+  const href = depth === 0 ? `${p}portfolio/${project.slug}` : `${project.slug}`;
   const meta = project.geography
     ? `<p class="text-muted small mb-2">${esc(project.descriptor)} · ${esc(project.geography)}</p>`
     : `<p class="text-muted small mb-2">${esc(project.descriptor)}</p>`;
@@ -482,7 +482,7 @@ function ldrCard(depth) {
 }
 
 function buildIndex() {
-  const depth = 0;
+  const depth = 1;
   const p = prefixForDepth(depth);
   const indexableForList = CASE_STUDIES.filter((c) => !c.robots);
   const itemList = {
@@ -523,7 +523,7 @@ function buildIndex() {
     <meta content="VIIX Solutions, portfolio, case studies, technology, digital growth" name="keywords">
     <meta content="${esc(INDEX_META.description)}" name="description">
 
-    <link href="img/logo/viixlogofull.png" rel="icon" type="image/png">
+    <link href="${p}img/logo/viixlogofull.png" rel="icon" type="image/png">
 ${seoBlock({
   title: INDEX_META.title,
   description: INDEX_META.description,
@@ -544,9 +544,9 @@ ${topbarHtml(depth)}
 
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-xl navbar-dark px-5 py-3 py-xl-0">
-            <a href="./" class="navbar-brand p-0 d-flex align-items-center gap-2">
-                <img src="img/logo/viixlogoshape.png" alt="" class="brand-logo brand-logo-shape">
-                <img src="img/logo/viixlogotext.png" alt="VIIX Solutions" class="brand-logo brand-logo-text">
+            <a href="${p}" class="navbar-brand p-0 d-flex align-items-center gap-2">
+                <img src="${p}img/logo/viixlogoshape.png" alt="" class="brand-logo brand-logo-shape">
+                <img src="${p}img/logo/viixlogotext.png" alt="VIIX Solutions" class="brand-logo brand-logo-text">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars" aria-hidden="true"></span>
@@ -555,11 +555,11 @@ ${topbarHtml(depth)}
                 <div class="navbar-nav ms-auto py-0">${navHtml(depth, "portfolio")}
                 </div>
                 <div class="d-xl-none py-2 region-switcher-nav">
-                    <a class="me-2 text-white" href="en-ng" data-viix-region="en-ng">Nigeria &amp; West Africa</a>
+                    <a class="me-2 text-white" href="${p}en-ng" data-viix-region="en-ng">Nigeria &amp; West Africa</a>
                     <span class="text-white-50 me-2">|</span>
-                    <a class="text-white" href="en-za" data-viix-region="en-za">Southern Africa</a>
+                    <a class="text-white" href="${p}en-za" data-viix-region="en-za">Southern Africa</a>
                 </div>
-                <a href="quote" class="btn btn-primary py-2 px-4 ms-xl-3">Book an Assessment</a>
+                <a href="${p}quote" class="btn btn-primary py-2 px-4 ms-xl-3">Book an Assessment</a>
             </div>
         </nav>
 
@@ -567,7 +567,7 @@ ${topbarHtml(depth)}
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
                     <h1 class="display-4 text-white animated zoomIn">Portfolio</h1>
-                    <a href="./" class="h5 text-white">Home</a>
+                    <a href="${p}" class="h5 text-white">Home</a>
                     <i class="far fa-circle text-white px-2"></i>
                     <span class="h5 text-white">Portfolio</span>
                 </div>
@@ -609,8 +609,8 @@ ${supporting.map((c) => portfolioCard(c, depth)).join("\n")}
 ${ldrCard(depth)}
             </div>
             <div class="text-center mt-5">
-                <a href="quote" class="btn btn-primary py-3 px-5 me-3">Book an Assessment</a>
-                <a href="contact" class="btn btn-outline-primary py-3 px-5">Contact VIIX</a>
+                <a href="${p}quote" class="btn btn-primary py-3 px-5 me-3">Book an Assessment</a>
+                <a href="${p}contact" class="btn btn-outline-primary py-3 px-5">Contact VIIX</a>
             </div>
         </div>
     </div>
@@ -814,9 +814,15 @@ function main() {
   const created = [];
   fs.mkdirSync(PORTFOLIO_DIR, { recursive: true });
 
-  const indexPath = path.join(ROOT, "portfolio.html");
+  const indexPath = path.join(PORTFOLIO_DIR, "index.html");
   fs.writeFileSync(indexPath, buildIndex(), "utf8");
-  created.push("portfolio.html");
+  created.push("portfolio/index.html");
+
+  const legacyIndex = path.join(ROOT, "portfolio.html");
+  if (fs.existsSync(legacyIndex)) {
+    fs.unlinkSync(legacyIndex);
+    created.push("portfolio.html (removed)");
+  }
 
   for (const project of CASE_STUDIES) {
     const filePath = path.join(PORTFOLIO_DIR, `${project.slug}.html`);

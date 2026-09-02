@@ -22,7 +22,7 @@ const indexable = [
 ];
 
 function fileForRoute(route) {
-  if (route === '/portfolio') return path.join(root, 'portfolio.html');
+  if (route === '/portfolio') return path.join(root, 'portfolio', 'index.html');
   return path.join(root, route.replace('/portfolio/', 'portfolio/') + '.html');
 }
 
@@ -58,7 +58,7 @@ const forbidden = [
   [/cheap website/i, 'vanity keyword'],
   [/paying customers(?!\s+revenue)/i, 'check context'], // vessa disclaimer OK
 ];
-const portfolioFiles = ['portfolio.html', ...fs.readdirSync(path.join(root, 'portfolio')).filter(f => f.endsWith('.html')).map(f => `portfolio/${f}`)];
+const portfolioFiles = ['portfolio/index.html', ...fs.readdirSync(path.join(root, 'portfolio')).filter(f => f.endsWith('.html') && f !== 'index.html').map(f => `portfolio/${f}`)];
 for (const rel of portfolioFiles) {
   const html = fs.readFileSync(path.join(root, rel), 'utf8');
   if (/portfolio\/cdr-technical/.test(html) && rel.includes('cdr-electrical')) {
