@@ -70,6 +70,9 @@ const CASE_STUDIES = [
       "Documented delivery spans Microsoft 365, networking, CCTV, day-to-day IT support, infrastructure management, and related hardware work as separate scoped engagements.",
     outcome: null,
     robots: null,
+    heroImage: "img/legacy/server.jpg",
+    heroImageAlt: "Professional with a tablet beside a glassed server room — contextual technology imagery",
+    heroImageFocal: "focal-center",
   },
   {
     id: "P5-002",
@@ -97,6 +100,9 @@ const CASE_STUDIES = [
     outcome:
       "Existing computers became usable again, with a documented qualitative improvement in usability and productivity — without quantified metrics.",
     robots: null,
+    heroImage: "img/legacy/system-unit.jpg",
+    heroImageAlt: "Desktop computer hardware on a work surface — contextual IT support imagery",
+    heroImageFocal: "focal-center",
   },
   {
     id: "P5-003",
@@ -130,6 +136,9 @@ const CASE_STUDIES = [
     delivered: "Brand identity, website, IT support, procurement, and technology setup — activity and output focused.",
     outcome: null,
     robots: null,
+    heroImage: "img/legacy/branding.jpg",
+    heroImageAlt: "Printed brand and design publications arranged on a desk — contextual branding imagery",
+    heroImageFocal: "focal-center",
   },
   {
     id: "P5-004",
@@ -160,6 +169,9 @@ const CASE_STUDIES = [
     delivered: "Procured and deployed IT infrastructure with ongoing support — delivery-led documentation without efficiency or financial outcome claims.",
     outcome: null,
     robots: null,
+    heroImage: "img/legacy/network.jpg",
+    heroImageAlt: "Network patch panel with Ethernet cables connected — contextual infrastructure imagery",
+    heroImageFocal: "focal-center",
   },
   {
     id: "P5-006",
@@ -285,6 +297,9 @@ const LDR_CARD = {
   name: "LDR",
   categoryLabel: "Development",
   descriptor: "Logistics software architecture in development",
+  heroImage: "img/legacy/software-development.jpg",
+  heroImageAlt: "Software development workspace — contextual imagery for VIIX R&D work",
+  heroImageFocal: "focal-center",
 };
 
 function prefixForDepth(depth) {
@@ -435,9 +450,14 @@ function projectFigure(project, depth, variant = "card") {
   const p = prefixForDepth(depth);
   if (project.heroImage) {
     const alt = project.heroImageAlt || `${project.name} project visual`;
-    const cls = variant === "hero" ? "portfolio-figure portfolio-figure--hero" : "portfolio-figure";
-    return `<figure class="${cls}">
-                        <img src="${p}${esc(project.heroImage)}" alt="${esc(alt)}" loading="lazy">
+    const focal = project.heroImageFocal ? ` class="${esc(project.heroImageFocal)}"` : "";
+    if (variant === "hero") {
+      return `<figure class="portfolio-figure--hero">
+                        <img src="${p}${esc(project.heroImage)}" alt="${esc(alt)}" loading="lazy"${focal}>
+                    </figure>`;
+    }
+    return `<figure>
+                        <img src="${p}${esc(project.heroImage)}" alt="${esc(alt)}" loading="lazy"${focal}>
                     </figure>`;
   }
   return placeholderFigure(project.name);
@@ -452,8 +472,8 @@ function portfolioCard(project, depth) {
   const p = prefixForDepth(depth);
   const href = depth === 0 ? `${p}portfolio/${project.slug}` : `${project.slug}`;
   const meta = project.geography
-    ? `<p class="text-muted small mb-2">${esc(project.descriptor)} · ${esc(project.geography)}</p>`
-    : `<p class="text-muted small mb-2">${esc(project.descriptor)}</p>`;
+    ? `<p class="portfolio-card-meta text-muted small mb-0">${esc(project.descriptor)} · ${esc(project.geography)}</p>`
+    : `<p class="portfolio-card-meta text-muted small mb-0">${esc(project.descriptor)}</p>`;
   return `                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.1s">
                     <a href="${href}" class="portfolio-card d-block text-decoration-none h-100">
                         ${projectFigure(project, depth)}
@@ -469,14 +489,14 @@ function portfolioCard(project, depth) {
 function ldrCard(depth) {
   const p = prefixForDepth(depth);
   return `                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-card h-100">
-                        ${placeholderFigure(LDR_CARD.name)}
+                    <div class="portfolio-card h-100 d-flex flex-column">
+                        ${projectFigure(LDR_CARD, depth)}
                         <div class="portfolio-info">
                             <h4>${esc(LDR_CARD.name)}</h4>
                             <p>${esc(LDR_CARD.categoryLabel)}</p>
                         </div>
                     </div>
-                    <p class="text-muted small mb-2">${esc(LDR_CARD.descriptor)}</p>
+                    <p class="portfolio-card-meta text-muted small mb-2">${esc(LDR_CARD.descriptor)}</p>
                     <a href="${p}contact" class="btn btn-sm btn-outline-primary">Discuss this work</a>
                 </div>`;
 }
@@ -575,10 +595,10 @@ ${topbarHtml(depth)}
         </div>
     </div>
 
-    <main id="main-content">
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title position-relative pb-3 mb-5 mx-auto text-center" style="max-width: 720px;">
+    <main id="main-content" class="portfolio-page">
+    <div class="container-fluid pt-5 pb-3 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container pb-2">
+            <div class="section-title position-relative pb-3 mb-0 mx-auto text-center" style="max-width: 720px;">
                 <h5 class="fw-bold text-primary text-uppercase">Selected Work</h5>
                 <h2 class="mb-3">Evidence-Led Projects Across Technology and Digital Growth</h2>
                 <p class="mb-0">${esc(INDEX_META.description)}</p>
@@ -587,7 +607,7 @@ ${topbarHtml(depth)}
     </div>
 
     <div class="container-fluid service-showcase pb-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container pb-5">
+        <div class="container pb-4">
             <div class="section-title position-relative pb-3 mb-4">
                 <h5 class="fw-bold text-primary text-uppercase">Featured</h5>
                 <h2 class="mb-0">Editorial Highlights</h2>
@@ -598,8 +618,8 @@ ${featured.map((c) => portfolioCard(c, depth)).join("\n")}
         </div>
     </div>
 
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
+    <div class="container-fluid portfolio-page-section pb-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container pb-4">
             <div class="section-title position-relative pb-3 mb-4">
                 <h5 class="fw-bold text-primary text-uppercase">Client Engagements &amp; Products</h5>
                 <h2 class="mb-0">More From the Portfolio</h2>

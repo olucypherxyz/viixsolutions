@@ -1436,6 +1436,41 @@ h6 {
 
 .portfolio-figure--hero {
     height: 320px;
+    margin: 0;
+    overflow: hidden;
+    background: var(--primary);
+}
+
+.portfolio-figure--hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.portfolio-page .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.portfolio-page .portfolio-item > .portfolio-card {
+    flex: 1 1 auto;
+}
+
+.portfolio-page .portfolio-card-meta {
+    margin-top: 0.75rem;
+    line-height: 1.45;
+    min-height: 2.75rem;
+}
+
+.portfolio-page-section .row.g-4 {
+    align-items: stretch;
+}
+
+.portfolio-page .portfolio-item .btn-outline-primary {
+    margin-top: auto;
 }
 
 @media (hover: none) {
