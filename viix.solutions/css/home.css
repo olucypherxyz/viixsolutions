@@ -458,6 +458,20 @@ em {
   place-items: center;
   font-size: 22px;
 }
+/* Inline SVG drawn to the metrics of the U+2197 fallback glyph it replaces;
+   Apple platforms render that character as an emoji. */
+.arrow-up-right {
+  display: inline-block;
+  width: 0.732em;
+  height: 0.6em;
+  fill: currentColor;
+  vertical-align: baseline;
+}
+/* As a grid item it is centred rather than sat on the baseline the glyph used. */
+.round-arrow .arrow-up-right {
+  position: relative;
+  top: 0.047em;
+}
 .image-note {
   position: absolute;
   bottom: 12px;
