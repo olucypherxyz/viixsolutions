@@ -209,12 +209,22 @@
                 class="bg-primary rounded h-100 d-flex align-items-center p-5 enquiry-panel"
               >
                 <form
-                  action="mailto:mail@viix.solutions?subject=Digital%20Operations%20Assessment%20-%20Southern%20Africa"
-                  class="w-100"
+                  action="/api/contact"
+                  class="enquiry-form w-100"
                   data-enquiry-region="en-za"
-                  enctype="text/plain"
+                  id="za-enquiry-form"
                   method="post"
                 >
+                  <div class="enquiry-honeypot" aria-hidden="true">
+                    <label for="za-enquiry-website">Website</label>
+                    <input
+                      autocomplete="off"
+                      id="za-enquiry-website"
+                      name="website"
+                      tabindex="-1"
+                      type="text"
+                    />
+                  </div>
                   <div class="row g-3">
                     <div class="col-12">
                       <label class="field-label-text" for="za-enquiry-name"
@@ -224,8 +234,8 @@
                         autocomplete="name"
                         class="form-control bg-light border-0"
                         id="za-enquiry-name"
-                        name="Name"
-                        placeholder="Your Name"
+                        name="name"
+                        placeholder="Your name"
                         required=""
                         type="text"
                       />
@@ -238,47 +248,68 @@
                         autocomplete="email"
                         class="form-control bg-light border-0"
                         id="za-enquiry-email"
-                        name="Email"
-                        placeholder="Your Email"
+                        name="email"
+                        placeholder="Your email"
                         required=""
                         type="email"
                       />
                     </div>
                     <div class="col-12">
                       <label class="field-label-text" for="za-enquiry-phone"
-                        >Phone (optional)</label
+                        >Phone
+                        <span class="text-muted">(optional)</span></label
                       >
                       <input
                         autocomplete="tel"
                         class="form-control bg-light border-0"
                         id="za-enquiry-phone"
-                        name="Phone"
-                        placeholder="Phone (optional)"
+                        name="phone"
+                        placeholder="Phone number"
                         type="tel"
                       />
                     </div>
                     <div class="col-12">
-                      <label class="field-label-text" for="za-enquiry-interest"
-                        >Interest</label
+                      <label class="field-label-text" for="za-enquiry-company"
+                        >Company or organisation
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <input
+                        autocomplete="organization"
+                        class="form-control bg-light border-0"
+                        id="za-enquiry-company"
+                        name="company"
+                        placeholder="Company or organisation"
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-enquiry-service"
+                        >Service of interest
+                        <span class="text-muted">(optional)</span></label
                       >
                       <select
                         class="form-select bg-light border-0"
-                        id="za-enquiry-interest"
-                        name="Interest"
+                        id="za-enquiry-service"
+                        name="service"
                       >
-                        <option
-                          selected=""
-                          value="Infrastructure &amp; Risk Assessment"
-                        >
-                          Infrastructure &amp; Risk Assessment
-                        </option>
+                        <option value="">Select a service</option>
                         <option value="Managed IT">Managed IT</option>
-                        <option value="Cybersecurity / POPIA">
-                          Cybersecurity / POPIA
+                        <option value="Web &amp; Digital Infrastructure">
+                          Web &amp; Digital Infrastructure
                         </option>
-                        <option value="Media / Brand (Phase 2)">
-                          Media / Brand (Phase 2)
+                        <option value="Business Systems &amp; Automation">
+                          Business Systems &amp; Automation
                         </option>
+                        <option value="Media &amp; Creative Execution">
+                          Media &amp; Creative Execution
+                        </option>
+                        <option value="Deployment &amp; Technical Projects">
+                          Deployment &amp; Technical Projects
+                        </option>
+                        <option value="Managed Services / SLA">
+                          Managed Services / SLA
+                        </option>
+                        <option value="General enquiry">General enquiry</option>
                       </select>
                     </div>
                     <div class="col-12">
@@ -288,22 +319,42 @@
                       <textarea
                         class="form-control bg-light border-0"
                         id="za-enquiry-message"
-                        name="Message"
-                        placeholder="Tell us briefly about your setup or challenge"
+                        name="message"
+                        placeholder="Tell us briefly what you need help with"
+                        required=""
                         rows="3"
                       ></textarea>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-dark w-100 py-3" type="submit">
-                        Open email draft <svg class="arrow-up-right" width="0.732em" height="0.6em" fill="currentColor" viewBox="0 200 732 600" aria-hidden="true" focusable="false"><path d="M350 235H637V522zM91 714 506 292 574 360 159 782z"/></svg>
+                        Send enquiry
+ <svg
+                          aria-hidden="true"
+                          class="arrow-up-right"
+                          fill="currentColor"
+                          focusable="false"
+                          height="0.6em"
+                          viewBox="0 200 732 600"
+                          width="0.732em"
+                        >
+                          <path
+                            d="M350 235H637V522zM91 714 506 292 574 360 159 782z"
+                          />
+                        </svg>
                       </button>
                     </div>
                   </div>
                   <p class="enquiry-note">
-                    Opens your email app with a ready-to-send draft. If nothing
-                    opens, copy the enquiry that appears below and email
-                    mail@viix.solutions.
+                    Your enquiry is sent securely to our team. We reply to the
+                    email address you provide. Prefer email? Write to
+                    <a href="mailto:mail@viix.solutions">mail@viix.solutions</a>.
                   </p>
+                  <div
+                    aria-live="polite"
+                    class="enquiry-status"
+                    hidden=""
+                    role="status"
+                  ></div>
                 </form>
               </div>
             </div>
@@ -357,7 +408,7 @@
       </div>
       <div class="footer-bottom">
         <span>© VIIX Solutions. All rights reserved.</span
-        ><a href="#main-content">Back to top ↑</a>
+        ><a href="#main-content">Back to top <svg class="arrow-up-right" width="0.732em" height="0.6em" fill="currentColor" viewBox="0 200 732 600" aria-hidden="true" focusable="false"><path d="M350 235H637V522zM91 714 506 292 574 360 159 782z"/></svg></a>
       </div>
     </footer>
   </body>

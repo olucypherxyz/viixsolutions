@@ -823,6 +823,134 @@
   margin-top: 20px;
   color: #466044;
 }
+.enquiry-honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.enquiry-form {
+  position: relative;
+}
+.enquiry-status {
+  margin-top: 16px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  border: 1px solid #a1b69c;
+  background: var(--paper);
+  color: #344f3b;
+}
+.enquiry-status--pending {
+  border-color: #7a9a82;
+}
+.enquiry-status--success {
+  border-color: #346347;
+  background: #eef6ea;
+  color: #1f3d2a;
+}
+.enquiry-status--error {
+  border-color: #9a4d3a;
+  background: #f8ece8;
+  color: #5c2418;
+}
+.enquiry-panel [aria-invalid="true"] {
+  border-color: #9a4d3a !important;
+  box-shadow: 0 0 0 3px #9a4d3a22;
+}
+.service-pillars {
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 768px) {
+  .service-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .service-pillars {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+.service-pillar {
+  padding: 22px 20px;
+  border: 1px solid #a1b69c;
+  background: var(--paper, #f7f4ea);
+  height: 100%;
+}
+.service-pillar .pillar-number {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #466044;
+  margin-bottom: 10px;
+}
+.service-pillar h3,
+.service-pillar h4 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.service-pillar p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #344f3b;
+}
+.engagement-models {
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 768px) {
+  .engagement-models {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.engagement-model {
+  padding: 24px 22px;
+  border: 1px solid #a1b69c;
+  background: #eef3e8;
+  height: 100%;
+}
+.engagement-model h3,
+.engagement-model h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.engagement-model p {
+  margin: 0;
+  line-height: 1.55;
+  color: #344f3b;
+}
+.icon-arrow-down {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  vertical-align: -0.05em;
+}
+.managed-tier-list {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+.managed-tier-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #a1b69c;
+}
+.managed-tier-list .tier-name {
+  font-weight: 600;
+}
+.managed-tier-list .tier-note {
+  color: #466044;
+  font-size: 0.95rem;
+}
 .page-contact main .bg-light {
   padding: 35px !important;
   border-top: 1px solid #a0b297;

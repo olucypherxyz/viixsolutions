@@ -1,0 +1,137 @@
+<!-- Reference enquiry form markup used across quote/contact pages. -->
+<form
+  action="/api/contact"
+  class="enquiry-form w-100"
+  data-enquiry-region="REGION"
+  id="enquiry-form"
+  method="post"
+>
+  <div class="enquiry-honeypot" aria-hidden="true">
+    <label for="enquiry-website">Website</label>
+    <input
+      autocomplete="off"
+      id="enquiry-website"
+      name="website"
+      tabindex="-1"
+      type="text"
+    />
+  </div>
+  <div class="row g-3">
+    <div class="col-12">
+      <label class="field-label-text" for="enquiry-name">Your name</label>
+      <input
+        autocomplete="name"
+        class="form-control bg-light border-0"
+        id="enquiry-name"
+        name="name"
+        placeholder="Your name"
+        required=""
+        type="text"
+      />
+    </div>
+    <div class="col-12">
+      <label class="field-label-text" for="enquiry-email">Your email</label>
+      <input
+        autocomplete="email"
+        class="form-control bg-light border-0"
+        id="enquiry-email"
+        name="email"
+        placeholder="Your email"
+        required=""
+        type="email"
+      />
+    </div>
+    <div class="col-12">
+      <label class="field-label-text" for="enquiry-phone"
+        >Phone <span class="text-muted">(optional)</span></label
+      >
+      <input
+        autocomplete="tel"
+        class="form-control bg-light border-0"
+        id="enquiry-phone"
+        name="phone"
+        placeholder="Phone number"
+        type="tel"
+      />
+    </div>
+    <div class="col-12">
+      <label class="field-label-text" for="enquiry-company"
+        >Company or organisation
+        <span class="text-muted">(optional)</span></label
+      >
+      <input
+        autocomplete="organization"
+        class="form-control bg-light border-0"
+        id="enquiry-company"
+        name="company"
+        placeholder="Company or organisation"
+        type="text"
+      />
+    </div>
+    <div class="col-12">
+      <label class="field-label-text" for="enquiry-service"
+        >Service of interest <span class="text-muted">(optional)</span></label
+      >
+      <select
+        class="form-select bg-light border-0"
+        id="enquiry-service"
+        name="service"
+      >
+        <option value="">Select a service</option>
+        <option value="Managed IT">Managed IT</option>
+        <option value="Web &amp; Digital Infrastructure">
+          Web &amp; Digital Infrastructure
+        </option>
+        <option value="Business Systems &amp; Automation">
+          Business Systems &amp; Automation
+        </option>
+        <option value="Media &amp; Creative Execution">
+          Media &amp; Creative Execution
+        </option>
+        <option value="Deployment &amp; Technical Projects">
+          Deployment &amp; Technical Projects
+        </option>
+        <option value="Managed Services / SLA">Managed Services / SLA</option>
+        <option value="General enquiry">General enquiry</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <label class="field-label-text" for="enquiry-message">Message</label>
+      <textarea
+        class="form-control bg-light border-0"
+        id="enquiry-message"
+        name="message"
+        placeholder="Tell us briefly what you need help with"
+        required=""
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-dark w-100 py-3" type="submit">
+        Send enquiry
+ <svg
+          aria-hidden="true"
+          class="arrow-up-right"
+          fill="currentColor"
+          focusable="false"
+          height="0.6em"
+          viewBox="0 200 732 600"
+          width="0.732em"
+        >
+          <path d="M350 235H637V522zM91 714 506 292 574 360 159 782z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <p class="enquiry-note">
+    Your enquiry is sent securely to our team. We reply to the email address you
+    provide. Prefer email? Write to
+    <a href="mailto:mail@viix.solutions">mail@viix.solutions</a>.
+  </p>
+  <div
+    aria-live="polite"
+    class="enquiry-status"
+    hidden=""
+    role="status"
+  ></div>
+</form>
