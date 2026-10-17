@@ -24,12 +24,12 @@ Run from this directory:
 
 ## Capability and logo conventions
 
-Client-facing service introduction uses five pillars: Managed IT; Web & Digital Infrastructure; Business Systems & Automation; Media & Creative Execution; Deployment & Technical Projects.
+Services are presented as five capability domains, in this order: Managed IT; Media & Creative Execution; Business Systems & Automation; Web & Digital Infrastructure; Deployment & Technical Projects. The first three are the original ICT, Media and Business domains, evolved; the last two grew out of them. They use the existing components only: the homepage `capability-list` disclosures and the service page `service-item` cards (three across, two below on desktop; full-width rows with the description beside the title between 576px and 991px; stacked on phones). Do not add a parallel card grid.
 
-The Convergence Field visual and filters still use three connected domains — ICT, Media and Business — as the design taxonomy. Service filters, portfolio labels and regional capability maps use this taxonomy. Operations and CRM / sales support belong to Business.
+The Convergence Field visual, portfolio labels, service filters and regional capability maps keep the three-domain taxonomy (ICT, Media, Business).
 
-Engagement models: one-time projects; standalone recurring services; Managed Services / SLA. Managed tiers are named Essential, Business, Business+, Managed and Enterprise. Public price amounts are not published on the site unless separately authorised.
+Engagement models: scoped projects; standalone recurring services; ongoing managed services. Managed tiers are named Essential, Business, Business+, Managed and Enterprise. Public price amounts are not published on the site unless separately authorised.
 
-The capability colors follow the original logo: ICT blue, Media yellow, Business green. Use them as restrained indicators, not body-text colors.
+The capability colors follow the original logo: ICT blue, Media yellow, Business green. Web & Digital Infrastructure uses an ICT-to-Media gradient line and Deployment & Technical Projects an ICT-to-Business line. Use them as restrained indicators, not body-text colors.
 
 Use the original text logo in navigation, the full logo in footers, and the shapes logo inside the convergence visuals. Preserve the supplied colors and natural aspect ratios. Do not rebuild the wordmark with a font or stretch the artwork.

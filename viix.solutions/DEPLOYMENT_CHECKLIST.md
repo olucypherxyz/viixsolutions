@@ -2,6 +2,18 @@
 
 Do **not** deploy until the items below are confirmed. This change set stops at the approval gate.
 
+## Current blocker (2026-10-18)
+
+Adding `viix.solutions` to Resend failed: the Resend account has reached its plan's domain limit (403). It already holds olucypher.xyz, 69resources.com and oryzune.app. One of these is needed first:
+
+- upgrade the Resend plan, or
+- remove an unused domain from that account, or
+- create a separate Resend account for VIIX Solutions (fits its independent positioning).
+
+Real delivery has not been verified. The handler code path is covered by `node scripts/test-contact-validation.cjs` with Resend stubbed.
+
+Root mail for viix.solutions is Proton (MX `mail.protonmail.ch`, SPF `include:_spf.protonmail.ch`). Resend's records live on `send.viix.solutions` and `resend._domainkey`, so they do not touch the Proton MX or root SPF.
+
 ## Resend configuration
 
 1. Confirm a Resend account is available for VIIX Solutions.

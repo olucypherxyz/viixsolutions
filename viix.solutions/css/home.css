@@ -1033,6 +1033,16 @@ details[open] .expand:after {
 [data-capability="business"] {
   --cap-color: var(--cap-business);
 }
+/* The two newer pillars inherit their accents from the domains they grew out of:
+   web from ICT + Media, deployment from ICT + Business. */
+[data-capability="web"] {
+  --cap-color: var(--cap-ict);
+  --cap-color-end: var(--cap-media);
+}
+[data-capability="deploy"] {
+  --cap-color: var(--cap-ict);
+  --cap-color-end: var(--cap-business);
+}
 .site-header .brand.brand-wordmark img {
   width: 190px;
   height: auto;
@@ -1112,6 +1122,11 @@ details[open] .expand:after {
   border-left: 2px solid var(--cap-color);
   padding-left: 18px;
 }
+.capability-list details[data-capability="web"] summary,
+.capability-list details[data-capability="deploy"] summary {
+  border-image: linear-gradient(180deg, var(--cap-color), var(--cap-color-end))
+    1;
+}
 .capability-list .cap-content {
   padding-left: 56px;
 }
@@ -1155,67 +1170,8 @@ details[open] .expand:after {
   }
 }
 
-.service-pillars {
-  display: grid;
-  gap: 16px;
-}
-@media (min-width: 768px) {
-  .service-pillars {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-@media (min-width: 1100px) {
-  .service-pillars {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-.service-pillar {
-  padding: 22px 18px;
-  border: 1px solid rgba(52, 99, 71, 0.28);
-  background: rgba(255, 255, 255, 0.55);
-  height: 100%;
-}
-.service-pillar .pillar-number {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted, #466044);
-  margin-bottom: 10px;
-}
-.service-pillar h3 {
-  font-size: 1.05rem;
-  margin: 0 0 10px;
-}
-.service-pillar p {
-  margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-.engagement-models {
-  display: grid;
-  gap: 16px;
-}
-@media (min-width: 768px) {
-  .engagement-models {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-.engagement-model {
-  padding: 22px 20px;
-  border: 1px solid rgba(52, 99, 71, 0.28);
-  background: rgba(255, 255, 255, 0.55);
-  height: 100%;
-}
-.engagement-model h3 {
-  font-size: 1.05rem;
-  margin: 0 0 10px;
-}
-.engagement-model p {
-  margin: 0;
-  line-height: 1.55;
-}
-.icon-arrow-down {
+.icon-arrow-down,
+.icon-arrow-up {
   display: inline-block;
   vertical-align: -0.05em;
 }
