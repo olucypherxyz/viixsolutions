@@ -201,9 +201,166 @@
                   review your setup, flag POPIA-related risks, and come back
                   with a right-sized recommendation.
                 </p>
-                <a class="btn btn-primary py-3 px-5" href="/en-za/quote"
-                  >Book a Free Assessment →</a
+                <a class="btn btn-primary py-3 px-5" href="#za-contact-form"
+                  >Send an enquiry
+                <svg aria-hidden="true" class="arrow-up-right" fill="currentColor" focusable="false" height="0.6em" viewBox="0 200 732 600" width="0.732em"><path d="M350 235H637V522zM91 714 506 292 574 360 159 782z"/></svg></a
                 >
+              </div>
+            </div>
+          </div>
+          <div class="row g-5 mt-2">
+            <div class="col-lg-7 mx-auto">
+              <div
+                class="bg-primary rounded d-flex align-items-center p-5 enquiry-panel"
+              >
+                <form
+                  action="/api/contact"
+                  class="enquiry-form w-100"
+                  data-enquiry-region="en-za"
+                  id="za-contact-form"
+                  method="post"
+                >
+                  <div class="enquiry-honeypot" aria-hidden="true">
+                    <label for="za-contact-website">Website</label>
+                    <input
+                      autocomplete="off"
+                      id="za-contact-website"
+                      name="website"
+                      tabindex="-1"
+                      type="text"
+                    />
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-contact-name"
+                        >Your name</label
+                      >
+                      <input
+                        autocomplete="name"
+                        class="form-control bg-light border-0"
+                        id="za-contact-name"
+                        name="name"
+                        placeholder="Your name"
+                        required=""
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-contact-email"
+                        >Your email</label
+                      >
+                      <input
+                        autocomplete="email"
+                        class="form-control bg-light border-0"
+                        id="za-contact-email"
+                        name="email"
+                        placeholder="Your email"
+                        required=""
+                        type="email"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-contact-phone"
+                        >Phone
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <input
+                        autocomplete="tel"
+                        class="form-control bg-light border-0"
+                        id="za-contact-phone"
+                        name="phone"
+                        placeholder="Phone number"
+                        type="tel"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-contact-company"
+                        >Company or organisation
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <input
+                        autocomplete="organization"
+                        class="form-control bg-light border-0"
+                        id="za-contact-company"
+                        name="company"
+                        placeholder="Company or organisation"
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-contact-service"
+                        >Service of interest
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <select
+                        class="form-select bg-light border-0"
+                        id="za-contact-service"
+                        name="service"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="Managed IT">Managed IT</option>
+                        <option value="Media &amp; Creative Execution">
+                          Media &amp; Creative Execution
+                        </option>
+                        <option value="Business Systems &amp; Automation">
+                          Business Systems &amp; Automation
+                        </option>
+                        <option value="Web &amp; Digital Infrastructure">
+                          Web &amp; Digital Infrastructure
+                        </option>
+                        <option value="Deployment &amp; Technical Projects">
+                          Deployment &amp; Technical Projects
+                        </option>
+                        <option value="Ongoing managed services">
+                          Ongoing managed services
+                        </option>
+                        <option value="General enquiry">General enquiry</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="za-contact-message"
+                        >Message</label
+                      >
+                      <textarea
+                        class="form-control bg-light border-0"
+                        id="za-contact-message"
+                        name="message"
+                        placeholder="Tell us briefly what you need help with"
+                        required=""
+                        rows="3"
+                      ></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-dark w-100 py-3" type="submit">
+                        Send enquiry
+                          <svg
+                          aria-hidden="true"
+                          class="arrow-up-right"
+                          fill="currentColor"
+                          focusable="false"
+                          height="0.6em"
+                          viewBox="0 200 732 600"
+                          width="0.732em"
+                        >
+                          <path
+                            d="M350 235H637V522zM91 714 506 292 574 360 159 782z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <p class="enquiry-note">
+                    Your enquiry is sent securely to our team. We reply to the
+                    email address you provide. Prefer email? Write to
+                    <a href="mailto:mail@viix.solutions">mail@viix.solutions</a>.
+                  </p>
+                  <div
+                    aria-live="polite"
+                    class="enquiry-status"
+                    hidden=""
+                    role="status"
+                  ></div>
+                </form>
               </div>
             </div>
           </div>
@@ -256,7 +413,7 @@
       </div>
       <div class="footer-bottom">
         <span>© VIIX Solutions. All rights reserved.</span
-        ><a href="#main-content">Back to top ↑</a>
+        ><a href="#main-content">Back to top <svg class="icon-arrow-up" width="0.7em" height="0.7em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
       </div>
     </footer>
   </body>

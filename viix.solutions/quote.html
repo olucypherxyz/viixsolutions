@@ -3,14 +3,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Book a Digital Operations Assessment | VIIX Solutions</title>
+    <title>Request a Consultation | VIIX Solutions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta
       content="VIIX Solutions, managed IT, media services, Africa"
       name="keywords"
     />
     <meta
-      content="Book a VIIX Digital Operations Assessment — infrastructure review, risk identification, and a right-sized recommendation for your business."
+      content="Request a consultation with VIIX Solutions — discuss projects, recurring services or managed support for your business."
       name="description"
     />
     <link href="/img/logo/viixlogofull.png" rel="icon" type="image/png" />
@@ -39,11 +39,11 @@
     <meta content="website" property="og:type" />
     <meta content="VIIX Solutions" property="og:site_name" />
     <meta
-      content="Book a Digital Operations Assessment | VIIX Solutions"
+      content="Request a Consultation | VIIX Solutions"
       property="og:title"
     />
     <meta
-      content="Book a VIIX Digital Operations Assessment — infrastructure review, risk identification, and a right-sized recommendation for your business."
+      content="Request a consultation with VIIX Solutions — discuss projects, recurring services or managed support for your business."
       property="og:description"
     />
     <meta content="https://www.viix.solutions/quote" property="og:url" />
@@ -53,11 +53,11 @@
     />
     <meta content="summary" name="twitter:card" />
     <meta
-      content="Book a Digital Operations Assessment | VIIX Solutions"
+      content="Request a Consultation | VIIX Solutions"
       name="twitter:title"
     />
     <meta
-      content="Book a VIIX Digital Operations Assessment — infrastructure review, risk identification, and a right-sized recommendation for your business."
+      content="Request a consultation with VIIX Solutions — discuss projects, recurring services or managed support for your business."
       name="twitter:description"
     />
     <meta
@@ -137,15 +137,16 @@
       <section class="page-hero">
         <nav aria-label="Breadcrumb" class="breadcrumbs">
           <a href="/">VIIX Solutions</a><span aria-hidden="true"> / </span
-          ><span aria-current="page">Book an Assessment</span>
+          ><span aria-current="page">Request a Consultation</span>
         </nav>
         <div class="page-hero-grid">
           <div>
             <p class="eyebrow">START A CONVERSATION</p>
-            <h1>Book an Assessment</h1>
+            <h1>Request a Consultation</h1>
           </div>
           <p class="page-hero-intro">
-            Tell us where you are today. Let’s work out what comes next.
+            Tell us about the project or support you need. We’ll respond with a
+            clear next step.
           </p>
         </div>
         <div aria-hidden="true" class="hero-traces">
@@ -167,34 +168,53 @@
                 infrastructure review, risk identification, and a right-sized
                 recommendation.
               </p>
-              <a
-                class="btn btn-primary py-3 px-5"
-                href="mailto:mail@viix.solutions?subject=Digital%20Operations%20Assessment"
-                >Book an Assessment →</a
-              >
+              <a class="btn btn-primary py-3 px-5" href="#enquiry-form"
+                >Request a Consultation
+                  <svg
+                  aria-hidden="true"
+                  class="arrow-up-right"
+                  fill="currentColor"
+                  focusable="false"
+                  height="0.6em"
+                  viewBox="0 200 732 600"
+                  width="0.732em"
+                >
+                  <path d="M350 235H637V522zM91 714 506 292 574 360 159 782z" />
+                </svg>
+              </a>
             </div>
             <div class="col-lg-5">
               <div
                 class="bg-primary rounded h-100 d-flex align-items-center p-5 enquiry-panel"
               >
                 <form
-                  action="mailto:mail@viix.solutions"
+                  action="/api/contact"
+                  class="enquiry-form w-100"
                   data-enquiry-region="global"
-                  enctype="text/plain"
                   id="enquiry-form"
-                  method="get"
+                  method="post"
                 >
+                  <div class="enquiry-honeypot" aria-hidden="true">
+                    <label for="enquiry-website">Website</label>
+                    <input
+                      autocomplete="off"
+                      id="enquiry-website"
+                      name="website"
+                      tabindex="-1"
+                      type="text"
+                    />
+                  </div>
                   <div class="row g-3">
                     <div class="col-12">
                       <label class="field-label-text" for="enquiry-name"
-                        >Your name or organisation</label
+                        >Your name</label
                       >
                       <input
-                        autocomplete="organization"
+                        autocomplete="name"
                         class="form-control bg-light border-0"
                         id="enquiry-name"
                         name="name"
-                        placeholder="Your Name / Organisation"
+                        placeholder="Your name"
                         required=""
                         type="text"
                       />
@@ -208,10 +228,68 @@
                         class="form-control bg-light border-0"
                         id="enquiry-email"
                         name="email"
-                        placeholder="Your Email"
+                        placeholder="Your email"
                         required=""
                         type="email"
                       />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="enquiry-phone"
+                        >Phone
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <input
+                        autocomplete="tel"
+                        class="form-control bg-light border-0"
+                        id="enquiry-phone"
+                        name="phone"
+                        placeholder="Phone number"
+                        type="tel"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="enquiry-company"
+                        >Company or organisation
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <input
+                        autocomplete="organization"
+                        class="form-control bg-light border-0"
+                        id="enquiry-company"
+                        name="company"
+                        placeholder="Company or organisation"
+                        type="text"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="field-label-text" for="enquiry-service"
+                        >Service of interest
+                        <span class="text-muted">(optional)</span></label
+                      >
+                      <select
+                        class="form-select bg-light border-0"
+                        id="enquiry-service"
+                        name="service"
+                      >
+                        <option value="">Select a service</option>
+                        <option value="Managed IT">Managed IT</option>
+                        <option value="Media &amp; Creative Execution">
+                          Media &amp; Creative Execution
+                        </option>
+                        <option value="Business Systems &amp; Automation">
+                          Business Systems &amp; Automation
+                        </option>
+                        <option value="Web &amp; Digital Infrastructure">
+                          Web &amp; Digital Infrastructure
+                        </option>
+                        <option value="Deployment &amp; Technical Projects">
+                          Deployment &amp; Technical Projects
+                        </option>
+                        <option value="Ongoing managed services">
+                          Ongoing managed services
+                        </option>
+                        <option value="General enquiry">General enquiry</option>
+                      </select>
                     </div>
                     <div class="col-12">
                       <label class="field-label-text" for="enquiry-message"
@@ -221,22 +299,41 @@
                         class="form-control bg-light border-0"
                         id="enquiry-message"
                         name="message"
-                        placeholder="Message"
+                        placeholder="Tell us briefly what you need help with"
                         required=""
                         rows="3"
                       ></textarea>
                     </div>
                     <div class="col-12">
                       <button class="btn btn-dark w-100 py-3" type="submit">
-                        Open email draft <svg class="arrow-up-right" width="0.732em" height="0.6em" fill="currentColor" viewBox="0 200 732 600" aria-hidden="true" focusable="false"><path d="M350 235H637V522zM91 714 506 292 574 360 159 782z"/></svg>
+                        Send enquiry
+                          <svg
+                          aria-hidden="true"
+                          class="arrow-up-right"
+                          fill="currentColor"
+                          focusable="false"
+                          height="0.6em"
+                          viewBox="0 200 732 600"
+                          width="0.732em"
+                        >
+                          <path
+                            d="M350 235H637V522zM91 714 506 292 574 360 159 782z"
+                          />
+                        </svg>
                       </button>
                     </div>
                   </div>
                   <p class="enquiry-note">
-                    Opens your email app with a ready-to-send draft. If nothing
-                    opens, copy the enquiry that appears below and email
-                    mail@viix.solutions.
+                    Your enquiry is sent securely to our team. We reply to the
+                    email address you provide. Prefer email? Write to
+                    <a href="mailto:mail@viix.solutions">mail@viix.solutions</a>.
                   </p>
+                  <div
+                    aria-live="polite"
+                    class="enquiry-status"
+                    hidden=""
+                    role="status"
+                  ></div>
                 </form>
               </div>
             </div>
@@ -300,7 +397,7 @@
       </div>
       <div class="footer-bottom">
         <span>© VIIX Solutions. All rights reserved.</span
-        ><a href="#main-content">Back to top ↑</a>
+        ><a href="#main-content">Back to top <svg class="icon-arrow-up" width="0.7em" height="0.7em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
       </div>
     </footer>
   </body>

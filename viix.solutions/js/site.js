@@ -1,6 +1,7 @@
 /* Progressive enhancements shared by the global and regional content pages. */
 (() => {
   "use strict";
+
   document.querySelectorAll(".portfolio-filters").forEach((filters) => {
     const section = filters.closest(".service-showcase");
     if (!section) return;
@@ -18,53 +19,145 @@
       });
     });
   });
+
+  const ARROW_SVG =
+    '<svg class="arrow-up-right" width="0.732em" height="0.6em" fill="currentColor" viewBox="0 200 732 600" aria-hidden="true" focusable="false"><path d="M350 235H637V522zM91 714 506 292 574 360 159 782z"/></svg>';
+
+  function ensureStatus(form) {
+    let status = form.querySelector(".enquiry-status");
+    if (!status) {
+      status = document.createElement("div");
+      status.className = "enquiry-status";
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      status.hidden = true;
+      form.appendChild(status);
+    }
+    return status;
+  }
+
+  function setStatus(form, type, message) {
+    const status = ensureStatus(form);
+    status.hidden = !message;
+    status.className = `enquiry-status${type ? ` enquiry-status--${type}` : ""}`;
+    status.textContent = message || "";
+  }
+
+  function fieldValue(form, name) {
+    const field = form.elements.namedItem(name);
+    if (!field) return "";
+    return String(field.value || "").trim();
+  }
+
+  function markInvalid(form, fields) {
+    form.querySelectorAll("[aria-invalid]").forEach((el) => {
+      el.removeAttribute("aria-invalid");
+    });
+    (fields || []).forEach((name) => {
+      const field = form.elements.namedItem(name);
+      if (field && "setAttribute" in field) {
+        field.setAttribute("aria-invalid", "true");
+      }
+    });
+  }
+
   document.querySelectorAll("form[data-enquiry-region]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
+    let inFlight = false;
+    let lastPayloadKey = "";
+    let lastPayloadAt = 0;
+
+    form.setAttribute("novalidate", "");
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
-      const region = {
-        global: "Global",
-        "en-ng": "Nigeria & West Africa",
-        "en-za": "Southern Africa",
-      }[form.dataset.enquiryRegion];
-      const subject =
-        form.dataset.enquiryRegion === "en-ng"
-          ? "Brand & Visibility Review"
-          : "Digital Operations Assessment";
-      const fields = [...form.querySelectorAll("input, textarea, select")]
-        .filter((field) => field.name && field.type !== "hidden")
-        .map((field) => {
-          const label = field.labels?.[0]?.textContent.trim() || field.name;
-          return `${label}: ${field.value.trim()}`;
-        });
-      const fullSubject = `${subject} — ${region}`;
-      const body = fields.join("\n\n");
-      const draft = `To: mail@viix.solutions\nSubject: ${fullSubject}\n\n${body}`;
-      let fallback = form.querySelector(".enquiry-fallback");
-      if (!fallback) {
-        fallback = document.createElement("div");
-        fallback.className = "enquiry-fallback";
-        fallback.innerHTML =
-          "<p>If your email app did not open, copy this enquiry and send it to <a href=\"mailto:mail@viix.solutions\">mail@viix.solutions</a>.</p><pre class=\"enquiry-preview\"></pre><button class=\"btn btn-outline-primary enquiry-copy\" type=\"button\">Copy enquiry</button><p class=\"enquiry-copy-status\" hidden></p>";
-        form.appendChild(fallback);
-        fallback.querySelector(".enquiry-copy").addEventListener("click", async () => {
-          const status = fallback.querySelector(".enquiry-copy-status");
-          try {
-            await navigator.clipboard.writeText(draft);
-            status.hidden = false;
-            status.textContent = "Copied to clipboard.";
-          } catch {
-            status.hidden = false;
-            status.textContent = "Select the text above and copy it.";
-          }
-        });
+      if (inFlight) return;
+
+      const submitButton = form.querySelector('[type="submit"]');
+      const region = form.dataset.enquiryRegion || "global";
+      const payload = {
+        name: fieldValue(form, "name"),
+        email: fieldValue(form, "email"),
+        phone: fieldValue(form, "phone"),
+        company: fieldValue(form, "company"),
+        service: fieldValue(form, "service"),
+        message: fieldValue(form, "message"),
+        website: fieldValue(form, "website"),
+        region,
+        submissionId:
+          (typeof crypto !== "undefined" && crypto.randomUUID
+            ? crypto.randomUUID()
+            : `sub-${Date.now()}-${Math.random().toString(16).slice(2)}`),
+      };
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        setStatus(form, "error", "Please complete the highlighted fields.");
+        return;
       }
-      fallback.querySelector(".enquiry-preview").textContent = draft;
-      fallback.hidden = false;
-      if (navigator.clipboard?.writeText) {
-        navigator.clipboard.writeText(draft).catch(() => {});
+
+      const payloadKey = `${payload.email}|${payload.message}|${payload.region}`;
+      if (
+        payloadKey === lastPayloadKey &&
+        Date.now() - lastPayloadAt < 60_000
+      ) {
+        setStatus(
+          form,
+          "error",
+          "This enquiry was already submitted. Please wait before sending again.",
+        );
+        return;
       }
-      window.location.href = `mailto:mail@viix.solutions?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+
+      inFlight = true;
+      markInvalid(form, []);
+      setStatus(form, "pending", "Sending your enquiry…");
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.setAttribute("aria-busy", "true");
+      }
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok || !result.ok) {
+          markInvalid(form, result.fields);
+          setStatus(
+            form,
+            "error",
+            result.error ||
+              "We could not send your enquiry. Please try again or email mail@viix.solutions.",
+          );
+          return;
+        }
+
+        lastPayloadKey = payloadKey;
+        lastPayloadAt = Date.now();
+        form.reset();
+        setStatus(
+          form,
+          "success",
+          result.message || "Thank you. Your enquiry has been sent.",
+        );
+      } catch {
+        setStatus(
+          form,
+          "error",
+          "Network error. Please try again or email mail@viix.solutions.",
+        );
+      } finally {
+        inFlight = false;
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.removeAttribute("aria-busy");
+        }
+      }
     });
   });
+
+  // Expose for optional diagnostics; unused by pages.
+  window.__viixEnquiry = { arrow: ARROW_SVG };
 })();

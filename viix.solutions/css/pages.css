@@ -823,6 +823,50 @@
   margin-top: 20px;
   color: #466044;
 }
+.enquiry-honeypot {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.enquiry-form {
+  position: relative;
+}
+.enquiry-status {
+  margin-top: 16px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  border: 1px solid #a1b69c;
+  background: var(--paper);
+  color: #344f3b;
+}
+.enquiry-status--pending {
+  border-color: #7a9a82;
+}
+.enquiry-status--success {
+  border-color: #346347;
+  background: #eef6ea;
+  color: #1f3d2a;
+}
+.enquiry-status--error {
+  border-color: #9a4d3a;
+  background: #f8ece8;
+  color: #5c2418;
+}
+.enquiry-panel [aria-invalid="true"] {
+  border-color: #9a4d3a !important;
+  box-shadow: 0 0 0 3px #9a4d3a22;
+}
+.icon-arrow-down,
+.icon-arrow-up {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  vertical-align: -0.05em;
+}
 .page-contact main .bg-light {
   padding: 35px !important;
   border-top: 1px solid #a0b297;
@@ -1039,6 +1083,10 @@
 .featured-strip [data-capability] {
   border-top: 2px solid var(--cap-color);
 }
+.service-item[data-capability="web"],
+.service-item[data-capability="deploy"] {
+  border-image: linear-gradient(90deg, var(--cap-color), var(--cap-color-end)) 1;
+}
 .service-item .capability-scope {
   font-size: 14px;
   line-height: 1.55;
@@ -1102,5 +1150,32 @@
   .capability-domain-links {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+}
+/* Five capability domains: three across, two below on desktop. Between phone
+   and desktop each card runs full width with its description beside the title,
+   so no row is left with a single stretched card. */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .service-domains .service-item {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: 36px;
+    min-height: 0;
+  }
+  .service-domains .service-item:before,
+  .service-domains .service-item h4,
+  .service-domains .service-item .capability-scope {
+    grid-column: 1;
+  }
+  .service-domains .service-item:before {
+    margin-bottom: 22px;
+  }
+  .service-domains .service-item .m-0 {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+  .service-domains .service-item .capability-scope {
+    margin-bottom: 0;
   }
 }

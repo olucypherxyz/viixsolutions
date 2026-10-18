@@ -1033,6 +1033,16 @@ details[open] .expand:after {
 [data-capability="business"] {
   --cap-color: var(--cap-business);
 }
+/* The two newer pillars inherit their accents from the domains they grew out of:
+   web from ICT + Media, deployment from ICT + Business. */
+[data-capability="web"] {
+  --cap-color: var(--cap-ict);
+  --cap-color-end: var(--cap-media);
+}
+[data-capability="deploy"] {
+  --cap-color: var(--cap-ict);
+  --cap-color-end: var(--cap-business);
+}
 .site-header .brand.brand-wordmark img {
   width: 190px;
   height: auto;
@@ -1112,6 +1122,11 @@ details[open] .expand:after {
   border-left: 2px solid var(--cap-color);
   padding-left: 18px;
 }
+.capability-list details[data-capability="web"] summary,
+.capability-list details[data-capability="deploy"] summary {
+  border-image: linear-gradient(180deg, var(--cap-color), var(--cap-color-end))
+    1;
+}
 .capability-list .cap-content {
   padding-left: 56px;
 }
@@ -1153,4 +1168,10 @@ details[open] .expand:after {
     width: 96px;
     height: 96px;
   }
+}
+
+.icon-arrow-down,
+.icon-arrow-up {
+  display: inline-block;
+  vertical-align: -0.05em;
 }

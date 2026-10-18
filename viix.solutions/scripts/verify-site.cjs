@@ -11,11 +11,20 @@ function walk(dir) {
         : [path.join(dir, item.name)],
     );
 }
-const pages = walk(root).filter((file) => file.endsWith(".html"));
+const pages = walk(root).filter((file) => {
+  const rel = path.relative(root, file).replaceAll(path.sep, "/");
+  if (!file.endsWith(".html")) return false;
+  // Ignore authoring snippets and tooling HTML outside the public site tree.
+  if (rel.startsWith("scripts/")) return false;
+  return true;
+});
 const failures = [];
 let links = 0;
 function check(condition, message) {
   if (!condition) failures.push(message);
+}
+function isServerRoute(pathname) {
+  return pathname === "/api/contact" || pathname.startsWith("/api/");
 }
 function attributes(tag) {
   return Object.fromEntries(
@@ -71,6 +80,7 @@ for (const file of pages) {
     links++;
     const [url, fragment] = href.split("#");
     const pathname = url.split("?")[0];
+    if (pathname && isServerRoute(pathname)) continue;
     const target = pathname
       ? path.resolve(
           pathname.startsWith("/") ? root : path.dirname(file),
